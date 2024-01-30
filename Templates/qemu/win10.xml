@@ -37,7 +37,7 @@
       <entry name="version">System Version</entry>
       <entry name="serial">System Serial Number</entry>
       <!-- note that it is the same as UUID at the the top -->
-      <entry name="uuid">0e0b758e-5284-408a-8ca5-1ecb0be3fcb4</entry>
+      <entry name="uuid">b9895b43-6a73-4458-986d-39457b558efb</entry>
       <entry name="sku">SKU</entry>
       <entry name="family">To be filled by O.E.M.</entry>
     </system>
