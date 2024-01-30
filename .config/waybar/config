@@ -1,0 +1,239 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/arrow10"
+	],
+
+	"modules-center": [
+		"hyprland/window"
+	],
+
+	"modules-right": [
+		"custom/arrow9",
+		//"pulseaudio",
+		"wireplumber",
+		"custom/arrow8",
+		"network",
+		"custom/arrow7",
+		//"memory",
+		"custom/arrow6",
+		//"cpu",
+		//"custom/arrow5",
+		//"temperature",
+		//"custom/arrow4",
+		//"battery",
+		"custom/arrow3",
+		"custom/arrow2",
+		"tray",
+		"clock#date",
+		"custom/arrow1",
+		"clock#time"
+	],
+
+	// Modules
+
+	"clock#time": {
+		//"format": "{:%H:%M}",
+		"tooltip": false
+	},
+
+	"clock#date": {
+		"format": "{:%e %b %Y}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"on-scroll": 1,
+			"weeks-pos": "left",
+			"mode-mon-col": 2,
+			"format": {
+				"months":     "<span color='#fbf1c7'><b>{}</b></span>",
+				"days":       "<span color='#fbdbb2'><b>{}</b></span>",
+				"weeks":      "<span color='#83a598'><b>W{}</b></span>",
+				"weekdays":   "<span color='#fabd2f'><b>{}</b></span>",
+				"today":      "<span color='#8ec07c'><b><u>{}</u></b></span>"
+			}
+		},
+        "actions":  {
+			"on-click": "mode",
+			"on-click-right": "mode",
+			"on-scroll-up": "shift_down",
+			"on-scroll-down": "shift_up"
+		}
+	},
+
+	"tray": {
+		"icon-size": 18
+		//"spacing": 10
+	},
+
+	/* "battery": {
+		"interval": 10,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format-time": "{H}:{M:02}",
+		"format": "{icon} {capacity}% ({time})",
+		"format-charging": " {capacity}% ({time})",
+		"format-charging-full": " {capacity}%",
+		"format-full": "{icon} {capacity}%",
+		"format-alt": "{icon} {power}W",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": false
+	}, */
+
+	/* "temperature": {
+		"critical-threshold": 90,
+		"interval": 5,
+		"format": "{icon} {temperatureC}°",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": false
+	}, */
+
+	/* "cpu": {
+		"interval": 5,
+		"tooltip": false,
+		"format": " {usage}%",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	}, */
+
+	/* "memory": {
+		"interval": 5,
+		"format": "󰘚 {used:0.1f}G",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		},
+		"tooltip": false
+	}, */
+
+	"network": {
+		"interval": 5,
+		"format-wifi": "{icon}  {essid}",
+		"format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
+		"format-ethernet": "󰈀 {ifname}",
+		"format-disconnected": "󰤭 No connection",
+		"format-alt": "󰈀 {ipaddr}/{cidr}",
+		"on-click-right": "iwgtk",
+		"tooltip": false
+	},
+
+	/* "pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": " 󰝟 0% " ,
+		"format-icons": ["", "", ""],
+		"scroll-step": 2,
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-right": "pavucontrol",
+		"tooltip": false
+	}, */
+
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+		"format-muted": " 󰝟 0% " ,
+		"format-icons": ["", "", ""],
+		"scroll-step": 2.0,
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-click-right": "pavucontrol",
+		"tooltip": false
+	},
+
+	"hyprland/window": {
+		//"format": "{}",
+		"max-length": 100,
+		"separate-outputs": true,
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		// scrolling through workspaces
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		// creating default entries
+		"format": "{name}",
+		"sort-by-number": true,
+		"persistent-workspaces": {
+			"1": [ "DP-2" ],
+			"2": [ "DP-2" ],
+			"3": [ "DP-2" ],
+			"4": [ "DP-2" ],
+			"5": [ "DP-2" ],
+			"6": [ "DP-2" ],
+			"7": [ "DP-2" ],
+			"8": [ "DP-2" ],
+			"9": [ "DP-2" ]
+		},
+		"on-click": "activate"
+	},
+
+	"custom/arrow1": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow2": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow3": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow4": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow5": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow6": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow7": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow8": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow9": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow10": {
+		"format": "",
+		"tooltip": false
+	}
+
+}
+
+// vi:ft=jsonc
