@@ -21,6 +21,9 @@ done
 # Unbinds the GPUs EFI frame buffer
 echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
 
+# Avoids race conditions
+sleep 5
+
 # Unloads the NVIDIA drivers
 modprobe -r nvidia_uvm
 modprobe -r nvidia_drm
@@ -34,8 +37,8 @@ modprobe -r drm
 echo 3 > /proc/sys/vm/drop_caches
 echo 1 > /proc/sys/vm/compact_memory
 
-# Avoid race conditions
-sleep 2
+# Wayland takes longer to close properly, so I have to wait more
+sleep 5
 
 # Unbind the GPU from display driver
 virsh nodedev-detach pci_0000_08_00_0
