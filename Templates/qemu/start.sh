@@ -46,6 +46,9 @@ modprobe vfio
 modprobe vfio_pci
 modprobe vfio_iommu_type1
 
+# Enables improved IO scheduler for VMs
+echo "mq-deadline" > /sys/block/sda/queue/scheduler
+
 # Isolates VM's cores dynamically
 systemctl set-property --runtime -- user.slice AllowedCPUs=0-1,8-9
 systemctl set-property --runtime -- system.slice AllowedCPUs=0-1,8-9

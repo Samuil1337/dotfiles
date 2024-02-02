@@ -5,6 +5,9 @@ systemctl set-property --runtime -- user.slice AllowedCPUs=0-15
 systemctl set-property --runtime -- system.slice AllowedCPUs=0-15
 systemctl set-property --runtime -- init.scope AllowedCPUs=0-15
 
+# Re-enables better IO scheduler for general use and SSDs
+echo "bfq" > /sys/block/sda/queue/scheduler
+
 # Unload the VMs VFIO-PCI drivers
 modprobe -r vfio_pci
 modprobe -r vfio_iommu_type1
