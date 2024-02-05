@@ -60,7 +60,7 @@
 
 /* The whole bar */
 #waybar {
-	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
+	background: rgba(40, 40, 40, 0.8); /* #282828e0 */
 	color: @white;
 	font-family: JetBrainsMono Nerd Font;
 	font-size: 10pt;
@@ -152,6 +152,8 @@
 }
 
 #window {
+	font-family: Segoe UI;
+	font-weight: bold;
 	margin-right: 35pt;
 	margin-left: 35pt;
 }
