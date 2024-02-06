@@ -5,8 +5,14 @@
 #	echo "performance" > $file
 #done
 
-# Stops the display manager (Xorg)
+# Stops Hyprland
+# Uncomment the following lines, if your PC freezes
+#hyprctl dispatch exit
+#killall Hyprland
 systemctl stop sddm.service
+
+# Avoids race conditions
+sleep 3
 
 # Unbinds TTYs
 for (( i = 0; i < 7; i++)); do
@@ -20,9 +26,6 @@ done
 
 # Unbinds the GPUs EFI frame buffer
 echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
-
-# Avoids race conditions
-sleep 5
 
 # Unloads the NVIDIA drivers
 modprobe -r nvidia_uvm
@@ -38,7 +41,7 @@ echo 3 > /proc/sys/vm/drop_caches
 echo 1 > /proc/sys/vm/compact_memory
 
 # Wayland takes longer to close properly, so I have to wait more
-sleep 5
+sleep 2
 
 # Unbind the GPU from display driver
 virsh nodedev-detach pci_0000_08_00_0
