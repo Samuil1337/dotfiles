@@ -18,7 +18,6 @@ prompt walters
 alias gp='git pull'
 alias ll='ls -la'
 alias tmppkg='BUILDDIR=/tmp/makepkg makepkg'
-alias code='flatpak run com.vscodium.codium --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias config='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 # Personalisation
