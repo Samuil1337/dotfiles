@@ -1,0 +1,5 @@
+Description:	Brother HL-L2300D series
+Location:	Local Printer
+Driver:	Brother HL-L2300D series, using brlaser v6 (grayscale, 2-sided printing)
+Connection:	usb://Brother/HL-L2300D%20series?serial=E73860L5N350915
+Defaults:	job-sheets=none, none media=iso_a4_210x297mm sides=one-sided
